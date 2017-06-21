@@ -1,3 +1,13 @@
+/**
+    Course: CSC211(4104)
+    Filename : lab1.cpp
+    Requried : giftPrices.txt
+    Purpose: Read the gift name, and price, and rating from a text file. Then prompt the products with its name, price,
+    and rating.
+    @author Suresh Melvin Sigera
+    @date 06/07/2017
+*/
+
 #include <iostream> //standard input / output streams
 #include <iomanip>  //IO manipulators
 #include <fstream>  //file streams
@@ -21,7 +31,7 @@ int main() {
     if (inFile.is_open()) {
         //cout << "File is open " << endl;
         cout << "GIFTS" << setw(20) << "PRICE" << setw(30) << "HIGHLY RATED\n";
-        cout << setfill('-') << setw(70) << "-" << endl;
+        cout << setfill('-') << setw(20) << "-" << endl;
         while (!inFile.eof()) {
             inFile >> giftname >> giftprice >> rating;
             cout << setfill(' ');
