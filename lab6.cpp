@@ -9,34 +9,71 @@ int main() {
     int number_of_students = 25;
     int number_of_exams = 5;
     int record_index = 0;
-    string std_names[number_of_students];
+    int score = 0;
     float std_grades[number_of_students][number_of_exams];
+    string std_names[number_of_students];
+    string lg[number_of_students];
     ifstream inFile;
 
-//    cout << "Enter the number of students : ";
-//    cin >> number_of_students;
-//    cout << endl << "Enter the number of exams : ";
-//    cin >> number_of_exams;
+    cout << "Enter the number of students : ";
+    cin >> number_of_students;
+    cout << endl << "Enter the number of exams : ";
+    cin >> number_of_exams;
 
     inFile.open("grades.txt");
     if (inFile.is_open()) {
+        //cout << endl << "File is open";
         while (!inFile.eof()) {
             inFile >> std_names[record_index];
             for (int e = 0; e < number_of_exams; e++) {
                 inFile >> std_grades[record_index][e];
-                //cout << endl << std_names[record_index] << " " << std_grades[record_index][e];
             }
             record_index++;
         }
         inFile.close();
-//        for(int i=0; i<number_of_students; i++){
-//            cout<< endl << std_names[i];
-//            for(int j=0; j<number_of_exams; j++){
-//                cout<< i << j;
-//            }
-//        }
+        //cout << endl << "File is closed" << endl;
+        //process the grades for each student
+        for (int i = 0; i < record_index; i++) {
+            score = 0;
+            for (int j = 0; j < number_of_exams; j++) {
+                score += std_grades[i][j] / number_of_exams;
+            }
+            if (score <= 100 && score >= 97) {
+                lg[i] = "A+";
+            } else if (score <= 96 && score >= 93) {
+                lg[i] = "A";
+            } else if (score <= 92 && score >= 90) {
+                lg[i] = "A-";
+            } else if (score <= 89 && score >= 87) {
+                lg[i] = "B+";
+            } else if (score <= 86 && score >= 83) {
+                lg[i] = "B";
+            } else if (score <= 82 && score >= 80) {
+                lg[i] = "B-";
+            } else if (score <= 79 && score >= 77) {
+                lg[i] = "C+";
+            } else if (score <= 76 && score >= 73) {
+                lg[i] = "C";
+            } else if (score <= 72 && score >= 70) {
+                lg[i] = "C-";
+            } else if (score <= 69 && score >= 67) {
+                lg[i] = "D+";
+            } else if (score <= 66 && score >= 65) {
+                lg[i] = "D-";
+            } else if (score < 65) {
+                lg[i] = "F";
+            }
+        }
+        //cout << "Name" << setw(15) << "Test Scores" << setw(40)<<"Letter Grade" << endl;
+        for (int i = 0; i < number_of_students; i++) {
+            cout << std_names[i];
+            for (int e = 0; e < number_of_exams; e++) {
+                cout << " " << std_grades[i][e];
+            }
+            cout << " " << lg[i] << endl;
+        }
     } else {
         cerr << endl << "Cannot open the file";
         exit(EXIT_FAILURE);
     }
-}
+}//end main function
