@@ -30,8 +30,9 @@ int main() {
 
     if (inFile.is_open()) {
         //cout << "File is open " << endl;
-        cout << "GIFTS" << setw(20) << "PRICE" << setw(30) << "HIGHLY RATED\n";
-        cout << setfill('-') << setw(20) << "-" << endl;
+        cout << "GIFTS" << setw(20) << "PRICE" << setw(30) << "HIGHLY RATED" <<endl;
+        cout << setfill('-') << setw(60) << "-" << endl;
+
         while (!inFile.eof()) {
             inFile >> giftname >> giftprice >> rating;
             cout << setfill(' ');
@@ -43,7 +44,7 @@ int main() {
                 status = "YES";
                 tn_highly_rated_gifts++;
             }
-            cout << giftname << setw(10) << setprecision(4) << giftprice << setw(10) << status << endl;
+            cout << setw(15)<< left << giftname << right << setw(10) << setprecision(4) << giftprice << setw(25) << status << endl;
             // computing the total number of gifts in that are on the file.
             tn_records++;
         }
