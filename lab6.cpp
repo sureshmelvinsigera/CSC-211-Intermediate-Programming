@@ -15,10 +15,10 @@ int main() {
     string lg[number_of_students];
     ifstream inFile;
 
-    cout << "Enter the number of students : ";
-    cin >> number_of_students;
-    cout << endl << "Enter the number of exams : ";
-    cin >> number_of_exams;
+//    cout << "Enter the number of students : "  << endl;
+//    cin >> number_of_students;
+//    cout << "Enter the number of exams : " << endl;
+//    cin >> number_of_exams;
 
     inFile.open("grades.txt");
     if (inFile.is_open()) {
@@ -64,13 +64,13 @@ int main() {
                 lg[i] = "F";
             }
         }
-        //cout << "Name" << setw(15) << "Test Scores" << setw(40)<<"Letter Grade" << endl;
+        cout << setw(15) << left << "Name" << setw(38) << right << "Test Scores" << setw(36) << "Letter Grade" << endl;
         for (int i = 0; i < number_of_students; i++) {
-            cout << std_names[i];
+            cout << left << setw(36) << std_names[i];
             for (int e = 0; e < number_of_exams; e++) {
-                cout << " " << std_grades[i][e];
+                cout << setw(5) << std_grades[i][e];
             }
-            cout << " " << lg[i] << endl;
+            cout << setw(20) << " " << left << setw(20) << lg[i] << endl;
         }
     } else {
         cerr << endl << "Cannot open the file";
