@@ -14,7 +14,7 @@
 
 using namespace std;
 
-bool highlyRated(double);
+bool highlyRated(double);   //function prototype
 
 int main() {
     int tn_records = 0; // total number of records
@@ -30,7 +30,7 @@ int main() {
 
     if (inFile.is_open()) {
         //cout << "File is open " << endl;
-        cout << "GIFTS" << setw(20) << "PRICE" << setw(30) << "HIGHLY RATED" <<endl;
+        cout << "GIFTS" << setw(20) << "PRICE" << setw(30) << "HIGHLY RATED" << endl;
         cout << setfill('-') << setw(60) << "-" << endl;
 
         while (!inFile.eof()) {
@@ -44,7 +44,8 @@ int main() {
                 status = "YES";
                 tn_highly_rated_gifts++;
             }
-            cout << setw(15)<< left << giftname << right << setw(10) << setprecision(4) << giftprice << setw(25) << status << endl;
+            cout << setw(15) << left << giftname << right << setw(10) << setprecision(4) << giftprice << setw(25)
+                 << status << endl;
             // computing the total number of gifts in that are on the file.
             tn_records++;
         }
