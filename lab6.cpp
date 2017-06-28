@@ -1,3 +1,13 @@
+/**
+    Course: CSC211(4104)
+    Filename : lab6.cpp
+    Requried : grades.txt
+    Purpose: Ask the user to insert the number of students and number of grades to read from the file. Then print
+    student name, test scores and the letter grade for each student.
+    @author Suresh Melvin Sigera
+    @date 06/07/2017
+*/
+
 #include <iostream> //standard input / output streams
 #include <iomanip>  //IO manipulators
 #include <fstream>  //file streams
@@ -15,10 +25,10 @@ int main() {
     string lg[number_of_students];
     ifstream inFile;
 
-//    cout << "Enter the number of students : "  << endl;
-//    cin >> number_of_students;
-//    cout << "Enter the number of exams : " << endl;
-//    cin >> number_of_exams;
+    cout << "Enter the number of students : " << endl;
+    cin >> number_of_students;
+    cout << "Enter the number of exams : " << endl;
+    cin >> number_of_exams;
 
     inFile.open("grades.txt");
     if (inFile.is_open()) {
