@@ -3,7 +3,7 @@
 
 /**
  * @details Read the first record in the file, based on that value,allocate the pointer array, and read all the values.
- * and all the getAverage method.
+ * And then call the getAverage method.
  * @author Suresh Melvin Sigera
  */
 void Temperature::readFile() {
