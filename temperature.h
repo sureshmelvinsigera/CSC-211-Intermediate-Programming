@@ -1,5 +1,5 @@
 #include <iostream> //standard input / output streams
-#include <fstream>  //
+#include <fstream>  //file streams
 
 using namespace std;
 
