@@ -4,3 +4,5 @@ BestofPython 1113 85.00 78
 TheCIA 1114 15.00 10
 TheGreatGatsby 1115 16.25 1
 IntoTheWild 1116 35.00 45
+TheWorldRecords 2116 115.00 445
+PreCalculus 1012 235.00 145
